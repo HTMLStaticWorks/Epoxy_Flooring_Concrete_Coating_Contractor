@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html data-theme="light" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home 2 | EpoxyPro Contractors</title>
+<meta content="Industrial strength. Showroom quality. Explore our epoxy flooring process, industries served, and portfolio." name="description"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet"/>
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<link href="assets/css/style.css" rel="stylesheet"/>
+<style>
+    /* Home-2 specific: Split Hero */
+    .hero2 {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+    @media(max-width:991px){ .hero2{ grid-template-columns:1fr; } .hero2-right{ display:none; } }
+
+    .hero2-left {
+      background: var(--gradient-dark);
+      display: flex;
+      align-items: center;
+      padding: 140px 60px 80px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero2-left::before {
+      content:'';position:absolute;inset:0;
+      background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="80" cy="20" r="40" fill="none" stroke="rgba(249,115,22,0.06)" stroke-width="1"/><circle cx="80" cy="20" r="25" fill="none" stroke="rgba(249,115,22,0.04)" stroke-width="1"/></svg>') no-repeat right top;
+    }
+
+    .hero2-right {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero2-collage {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      height: 100%;
+      gap: 3px;
+    }
+    .hero2-collage-img {
+      overflow: hidden;
+      position: relative;
+    }
+    .hero2-collage-img:first-child { grid-row: 1/3; }
+    .hero2-collage-img img { width:100%;height:100%;object-fit:cover;transition:transform 8s ease; }
+    .hero2-collage-img:hover img { transform:scale(1.05); }
+    .hero2-collage-overlay {
+      position:absolute;inset:0;
+      background:linear-gradient(to bottom,rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.35) 100%);
+    }
+
+    /* Process Timeline */
+    .process-line {
+      display:flex;gap:0;position:relative;
+    }
+    .process-line::before {
+      content:'';position:absolute;top:40px;left:calc(80px/2);right:calc(80px/2);height:2px;
+      background:linear-gradient(90deg,var(--secondary),rgba(249,115,22,0.1));
+      z-index:0;
+    }
+    .process-node { flex:1;text-align:center;position:relative;z-index:1; }
+
+    /* Grid Portfolio (Aligned Heights) */
+    .portfolio-masonry {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .pm-item {
+      border-radius:var(--radius-lg);
+      overflow:hidden;
+      position:relative;
+      cursor:pointer;
+      display:block;
+      aspect-ratio: 4/3;
+    }
+    .pm-item img { width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s; }
+    .pm-item:hover img { transform:scale(1.05); }
+    .pm-overlay {
+      position:absolute;inset:0;
+      background:linear-gradient(to top,rgba(13,27,46,0.8),transparent 60%);
+      opacity:0;
+      transition:opacity 0.3s;
+      display:flex;align-items:flex-end;padding:16px;
+    }
+    .pm-item:hover .pm-overlay { opacity:1; }
+    .pm-label { color:#fff;font-size:0.82rem;font-weight:700; }
+
+    @media(max-width:991px){ .portfolio-masonry{ grid-template-columns: repeat(2, 1fr); } }
+    @media(max-width:575px){ .portfolio-masonry{ grid-template-columns: 1fr; } }
+
+    /* CTA Banner */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--secondary) 0%, #FBBF24 60%, var(--secondary-dark) 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cta-banner::before {
+      content:'';position:absolute;top:-50%;right:-10%;width:60%;height:200%;
+      background:radial-gradient(ellipse,rgba(255,255,255,0.12) 0%,transparent 65%);
+    }
+  </style>
+</head>
+<body>
+<!-- Page Loader -->
+
+<!-- HEADER -->
+<header class="site-header" data-transparent="true" id="siteHeader">
+<nav class="navbar navbar-expand-lg container-fluid px-4 px-lg-5">
+<a class="navbar-brand" href="index.html">
+<div class="brand-logo"><i class="fas fa-layer-group"></i></div>
+<div><span class="brand-name">EpoxyPro</span></div>
+</a>
+<button aria-label="Toggle navigation" class="navbar-toggler border-0 ms-auto me-3 me-lg-0" data-bs-target="#navMenu2" data-bs-toggle="collapse" type="button">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navMenu2">
+    <ul class="navbar-nav mx-auto gap-1">
+    <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+<li class="nav-item"><a class="nav-link active" href="home-2.html">Home 2</a></li>
+    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+    <li class="nav-item"><a class="nav-link" href="gallery.html">Gallery</a></li>
+    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+  </ul>
+<div class="header-actions mt-3 mt-lg-0 ms-lg-3">
+<button class="header-icon-btn rtl-toggle" title="RTL"><span class="rtl-label" style="font-size:0.7rem;font-weight:700;">RTL</span></button>
+<button class="header-icon-btn theme-toggle" title="Theme"><i class="theme-icon fas fa-moon"></i></button>
+<a class="nav-link header-quote-btn ms-1" href="register.html">Sign Up</a>
+
+</div>
+</div>
+</nav>
+</header>
+<!-- ================================================================
+     HERO 2 — SPLIT SCREEN
+     ================================================================ -->
+<section class="hero2" id="hero">
+<!-- Left -->
+<div class="hero2-left">
+<div class="position-relative z-1">
+<div class="hero-badge mb-4" data-aos="fade-down">
+<i class="fas fa-fire"></i> New Standard in Flooring
+      </div>
+<h1 class="hero-title mb-4" data-aos="fade-right">
+<span class="highlight">Industrial</span> Strength.<br/>
+        Showroom Quality.
+      </h1>
+<p class="hero-subtitle mb-4" data-aos="fade-right" data-aos-delay="100">
+        We engineer high-performance floor coating systems that look extraordinary and perform under the most demanding conditions — guaranteed.
+      </p>
+<div class="d-flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="200">
+<a class="btn-primary-custom" href="booking.html"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+<a class="btn-outline-custom" href="home-2.html#portfolio"><i class="fas fa-grip"></i> Our Portfolio</a>
+</div>
+<!-- Badges row -->
+<div class="d-flex flex-wrap gap-3 mt-5" data-aos="fade-up" data-aos-delay="300">
+<div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);padding:10px 16px;border-radius:12px;">
+<i class="fas fa-shield-alt" style="color:var(--secondary);"></i>
+<span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">5-Year Warranty</span>
+</div>
+<div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);padding:10px 16px;border-radius:12px;">
+<i class="fas fa-star" style="color:var(--secondary);"></i>
+<span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">5.0 Google Rating</span>
+</div>
+<div style="display:flex;align-items:center;gap:8px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);padding:10px 16px;border-radius:12px;">
+<i class="fas fa-bolt" style="color:var(--secondary);"></i>
+<span style="color:rgba(255,255,255,0.8);font-size:0.82rem;font-weight:600;">1-Day Installation</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right: Collage -->
+<div class="hero2-right">
+<div class="hero2-collage">
+<div class="hero2-collage-img">
+<img alt="Epoxy warehouse" src="assets/img/hero/home2_hero.png"/>
+<div class="hero2-collage-overlay"></div>
+</div>
+<div class="hero2-collage-img">
+<img alt="Garage epoxy" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&amp;q=80&amp;fit=crop"/>
+<div class="hero2-collage-overlay"></div>
+</div>
+<div class="hero2-collage-img">
+<img alt="Commercial floor" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&amp;q=80&amp;fit=crop"/>
+<div class="hero2-collage-overlay"></div>
+</div>
+</div>
+<!-- Floating badge -->
+<div style="position:absolute;bottom:30px;left:30px;background:rgba(249,115,22,0.95);border-radius:16px;padding:16px 22px;backdrop-filter:blur(8px);">
+<div style="font-size:1.6rem;font-weight:900;color:#fff;line-height:1;">1,200+</div>
+<div style="font-size:0.78rem;color:rgba(255,255,255,0.85);font-weight:600;letter-spacing:0.5px;">Projects Completed</div>
+</div>
+</div>
+</section>
+<!-- ================================================================
+     PROCESS SECTION
+     ================================================================ -->
+<section id="process" style="background:var(--bg-secondary);">
+<div class="container">
+<div class="section-header-center text-center mb-5" data-aos="fade-up">
+<div class="section-badge"><i class="fas fa-sitemap"></i> Our Process</div>
+<h2 class="section-title">How We <span>Get It Done</span></h2>
+<div class="divider-orange divider-center"></div>
+<p class="section-subtitle">A proven 4-step process that delivers flawless results every time — from initial call to final inspection.</p>
+</div>
+<div class="row g-4">
+<div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="0">
+<div class="process-step">
+<div class="process-step-number">01</div>
+<h3 class="process-step-title">Consultation</h3>
+<p class="process-step-text">Free on-site visit to assess your floor, discuss options, and provide a detailed quote with no pressure.</p>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+<div class="process-step">
+<div class="process-step-number">02</div>
+<h3 class="process-step-title">Surface Preparation</h3>
+<p class="process-step-text">Diamond grinding, shot blasting, and crack repair to create the perfect mechanical bond for lasting adhesion.</p>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+<div class="process-step">
+<div class="process-step-number">03</div>
+<h3 class="process-step-title">Coating Installation</h3>
+<p class="process-step-text">Expert application of primer, base coat, decorative elements, and topcoat using commercial-grade materials.</p>
+</div>
+</div>
+<div class="col-sm-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+<div class="process-step">
+<div class="process-step-number">04</div>
+<h3 class="process-step-title">Final Inspection</h3>
+<p class="process-step-text">Thorough walkthrough with our quality team to ensure every square inch meets our high standards before handover.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================================================================
+     INDUSTRIES SERVED
+     ================================================================ -->
+<section id="industries">
+<div class="container">
+<div class="section-header-center text-center mb-5" data-aos="fade-up">
+<div class="section-badge"><i class="fas fa-briefcase"></i> Industries</div>
+<h2 class="section-title">Industries We <span>Serve</span></h2>
+<div class="divider-orange divider-center"></div>
+<p class="section-subtitle">Our flooring solutions are engineered for the specific demands of each industry.</p>
+</div>
+<div class="row g-4">
+<div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="0">
+<div class="industry-card">
+<img alt="Warehouses" loading="lazy" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=400&amp;q=80&amp;fit=crop"/>
+<div class="industry-card-overlay"><div class="industry-card-name">Warehouses</div></div>
+</div>
+</div>
+<div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
+<div class="industry-card">
+<img alt="Auto Shops" loading="lazy" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&amp;q=80&amp;fit=crop"/>
+<div class="industry-card-overlay"><div class="industry-card-name">Auto Shops</div></div>
+</div>
+</div>
+<div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+<div class="industry-card">
+<img alt="Retail" loading="lazy" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=400&amp;q=80&amp;fit=crop"/>
+<div class="industry-card-overlay"><div class="industry-card-name">Retail Stores</div></div>
+</div>
+</div>
+<div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+<div class="industry-card">
+<img alt="Manufacturing" loading="lazy" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&amp;q=80&amp;fit=crop"/>
+<div class="industry-card-overlay"><div class="industry-card-name">Manufacturing</div></div>
+</div>
+</div>
+<div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+<div class="industry-card">
+<img alt="Garages" loading="lazy" src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=400&amp;q=80&amp;fit=crop"/>
+<div class="industry-card-overlay"><div class="industry-card-name">Garages</div></div>
+</div>
+</div>
+<div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+<div class="industry-card">
+<img alt="Commercial" loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&amp;q=80&amp;fit=crop"/>
+<div class="industry-card-overlay"><div class="industry-card-name">Commercial</div></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- ================================================================
+     PORTFOLIO MASONRY
+     ================================================================ -->
+<section id="portfolio" style="background:var(--bg-secondary);">
+<div class="container">
+<div class="section-header-center text-center mb-5" data-aos="fade-up">
+<div class="section-badge"><i class="fas fa-grip"></i> Our Work</div>
+<h2 class="section-title">Portfolio <span>Showcase</span></h2>
+<div class="divider-orange divider-center"></div>
+<p class="section-subtitle">Real results from real projects — see the EpoxyPro difference for yourself.</p>
+</div>
+<div class="portfolio-masonry">
+<div class="pm-item" data-aos="fade-up" data-lightbox="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&amp;q=80&amp;fit=crop">
+<img alt="Warehouse floor" loading="lazy" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&amp;q=80&amp;fit=crop"/>
+<div class="pm-overlay"><div class="pm-label"><i class="fas fa-expand me-1"></i> Industrial Warehouse</div></div>
+</div>
+<div class="pm-item" data-aos="fade-up" data-aos-delay="50" data-lightbox="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&amp;q=80&amp;fit=crop">
+<img alt="Garage floor" loading="lazy" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&amp;q=80&amp;fit=crop"/>
+<div class="pm-overlay"><div class="pm-label"><i class="fas fa-expand me-1"></i> Luxury Garage</div></div>
+</div>
+<div class="pm-item" data-aos="fade-up" data-aos-delay="100" data-lightbox="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&amp;q=80&amp;fit=crop">
+<img alt="Commercial office" loading="lazy" src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&amp;q=80&amp;fit=crop"/>
+<div class="pm-overlay"><div class="pm-label"><i class="fas fa-expand me-1"></i> Commercial Office</div></div>
+</div>
+<div class="pm-item" data-aos="fade-up" data-aos-delay="150" data-lightbox="https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&amp;q=80&amp;fit=crop">
+<img alt="Decorative flake" loading="lazy" src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=600&amp;q=80&amp;fit=crop"/>
+<div class="pm-overlay"><div class="pm-label"><i class="fas fa-expand me-1"></i> Decorative Flake</div></div>
+</div>
+<div class="pm-item" data-aos="fade-up" data-aos-delay="200" data-lightbox="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&amp;q=80&amp;fit=crop">
+<img alt="Polished concrete" loading="lazy" src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&amp;q=80&amp;fit=crop"/>
+<div class="pm-overlay"><div class="pm-label"><i class="fas fa-expand me-1"></i> Polished Concrete</div></div>
+</div>
+<div class="pm-item" data-aos="fade-up" data-aos-delay="250" data-lightbox="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&amp;q=80&amp;fit=crop">
+<img alt="Manufacturing floor" loading="lazy" src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&amp;q=80&amp;fit=crop"/>
+<div class="pm-overlay"><div class="pm-label"><i class="fas fa-expand me-1"></i> Manufacturing Plant</div></div>
+</div>
+</div>
+<div class="text-center mt-5" data-aos="fade-up">
+<a class="btn-dark-custom" href="gallery.html"><i class="fas fa-images"></i> Full Gallery</a>
+</div>
+</div>
+</section>
+<!-- ================================================================
+     CTA BANNER
+     ================================================================ -->
+<section class="cta-banner">
+<div class="container position-relative" style="z-index:1;">
+<div class="row justify-content-center">
+<div class="col-lg-8" data-aos="zoom-in">
+<div class="section-badge" style="background:rgba(255,255,255,0.15);border-color:rgba(255,255,255,0.3);color:#fff;margin-bottom:20px;">
+<i class="fas fa-rocket"></i> Limited Time Offer
+        </div>
+<h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:16px;line-height:1.15;">
+          Request Your Free Flooring Estimate Today
+        </h2>
+<p style="font-size:1.05rem;color:rgba(255,255,255,0.85);margin-bottom:36px;">
+          Get a detailed, no-obligation quote within 24 hours. Our experts will visit your site and provide a comprehensive flooring plan tailored to your needs.
+        </p>
+<div class="d-flex flex-wrap gap-3 justify-content-center">
+<a class="btn-dark-custom" href="booking.html" style="background:#fff;color:var(--secondary);box-shadow:0 8px 30px rgba(0,0,0,0.2);">
+<i class="fas fa-file-invoice"></i> Get Free Estimate
+          </a>
+<a href="tel:+18005551234" style="display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,0.15);color:#fff;border:2px solid rgba(255,255,255,0.5);padding:14px 30px;border-radius:9999px;font-weight:700;font-size:0.95rem;">
+<i class="fas fa-phone"></i> Call Now
+          </a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FOOTER -->
+<footer class="site-footer">
+<div class="container">
+<div class="row g-5">
+<div class="col-lg-4 col-md-6">
+<div class="d-flex align-items-center gap-3 mb-3">
+<div class="brand-logo"><i class="fas fa-layer-group"></i></div>
+<div><div class="footer-brand-name">EpoxyPro</div></div>
+</div>
+<p class="footer-description">Texas's leading epoxy flooring and concrete coating specialists. Premium results, guaranteed.</p>
+<div class="social-links">
+<a aria-label="Facebook" class="social-link" href="#"><i class="fab fa-facebook-f"></i></a>
+<a aria-label="Instagram" class="social-link" href="#"><i class="fab fa-instagram"></i></a>
+<a aria-label="LinkedIn" class="social-link" href="#"><i class="fab fa-linkedin-in"></i></a>
+<a aria-label="YouTube" class="social-link" href="#"><i class="fab fa-youtube"></i></a>
+</div>
+</div>
+<div class="col-lg-2 col-md-6 col-sm-6">
+<h4 class="footer-heading">Quick Links</h4>
+<ul class="footer-links">
+<li><a href="index.html"><i class="fas fa-chevron-right"></i> Home</a></li>
+<li><a href="about.html"><i class="fas fa-chevron-right"></i> About</a></li>
+<li><a href="gallery.html"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+<li><a href="pricing.html"><i class="fas fa-chevron-right"></i> Pricing</a></li>
+<li><a href="contact.html"><i class="fas fa-chevron-right"></i> Contact</a></li>
+</ul>
+</div>
+<div class="col-lg-2 col-md-6 col-sm-6">
+<h4 class="footer-heading">Services</h4>
+<ul class="footer-links">
+<li><a href="service-details.html"><i class="fas fa-chevron-right"></i> Epoxy Coatings</a></li>
+<li><a href="service-details.html"><i class="fas fa-chevron-right"></i> Polyaspartic</a></li>
+<li><a href="service-details.html"><i class="fas fa-chevron-right"></i> Garage Floors</a></li>
+<li><a href="service-details.html"><i class="fas fa-chevron-right"></i> Industrial</a></li>
+<li><a href="service-details.html"><i class="fas fa-chevron-right"></i> Concrete Polish</a></li>
+</ul>
+</div>
+<div class="col-lg-4 col-md-6">
+<h4 class="footer-heading">Contact Us</h4>
+<div style="display:flex;flex-direction:column;gap:12px;">
+<div style="display:flex;align-items:center;gap:10px;"><i class="fas fa-phone" style="color:var(--secondary);width:16px;"></i><a href="tel:+18005551234" style="color:rgba(255,255,255,0.65);font-size:0.88rem;">(800) 555-1234</a></div>
+<div style="display:flex;align-items:center;gap:10px;"><i class="fas fa-envelope" style="color:var(--secondary);width:16px;"></i><a href="mailto:info@epoxypro.com" style="color:rgba(255,255,255,0.65);font-size:0.88rem;">info@epoxypro.com</a></div>
+<div style="display:flex;align-items:flex-start;gap:10px;"><i class="fas fa-map-marker-alt" style="color:var(--secondary);width:16px;margin-top:3px;"></i><span style="color:rgba(255,255,255,0.65);font-size:0.88rem;">4521 Industrial Blvd, Houston, TX 77001</span></div>
+</div>
+</div>
+</div>
+</div>
+<div class="footer-bottom mt-5">
+<div class="container">
+<div class="d-flex flex-column flex-md-row align-items-center justify-content-between gap-3">
+<p class="footer-bottom-text mb-0">© 2025 EpoxyPro Contractors. All rights reserved.</p>
+
+</div>
+</div>
+</div>
+</footer>
+<button aria-label="Back to top" class="back-to-top"><i class="fas fa-chevron-up"></i></button>
+<div aria-label="Image lightbox" class="lightbox-modal" id="lightboxModal" role="dialog">
+<button aria-label="Close" class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+<img alt="Project" class="lightbox-img" id="lightboxImg" src=""/>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
