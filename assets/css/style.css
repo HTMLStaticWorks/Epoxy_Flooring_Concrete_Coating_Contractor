@@ -133,6 +133,8 @@ html {
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 body {
@@ -141,6 +143,8 @@ body {
   color: var(--text-primary);
   line-height: 1.7;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
   transition: background-color 0.4s ease, color 0.4s ease;
 }
 
@@ -729,18 +733,24 @@ section { padding: var(--section-py) 0; }
   top: -10%; right: -5%;
   background: radial-gradient(circle, rgba(249,115,22,0.12) 0%, transparent 70%);
   animation: floatSlow 8s ease-in-out infinite;
+  pointer-events: none;
+  overflow: hidden;
 }
 .hero-particle-2 {
   width: 300px; height: 300px;
   bottom: 5%; left: -3%;
   background: radial-gradient(circle, rgba(27,58,107,0.25) 0%, transparent 70%);
   animation: floatSlow 10s ease-in-out infinite reverse;
+  pointer-events: none;
+  overflow: hidden;
 }
 .hero-particle-3 {
   width: 180px; height: 180px;
   top: 40%; right: 15%;
   background: radial-gradient(circle, rgba(14,165,233,0.10) 0%, transparent 70%);
   animation: floatSlow 6s ease-in-out infinite;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 .hero-content { position: relative; z-index: 2; }
@@ -1025,6 +1035,8 @@ section { padding: var(--section-py) 0; }
   height: 100%;
   position: relative;
   box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
 }
 .service-card::before {
   content: '';
@@ -1073,7 +1085,14 @@ section { padding: var(--section-py) 0; }
 }
 .service-card:hover .service-card-img-overlay { opacity: 0.7; }
 
-.service-card-body { padding: 28px; position: relative; z-index: 1; }
+.service-card-body {
+  padding: 28px;
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
 
 .service-card-icon {
   width: 54px; height: 54px;
@@ -1116,6 +1135,7 @@ section { padding: var(--section-py) 0; }
   color: var(--text-secondary);
   line-height: 1.75;
   margin-bottom: 20px;
+  flex: 1;
 }
 
 .service-card-link {
@@ -1142,6 +1162,71 @@ section { padding: var(--section-py) 0; }
 /* ================================================================
    WHY CHOOSE US — FEATURE CARDS
    ================================================================ */
+/* ================================================================
+   CERTIFICATION CARDS — EQUAL HEIGHT
+   ================================================================ */
+.cert-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  text-align: center;
+  padding: 32px 20px 28px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  min-height: 200px;
+  box-shadow: var(--shadow-card);
+}
+.cert-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--gradient-secondary);
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+.cert-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(249,115,22,0.25);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.10), 0 4px 16px rgba(249,115,22,0.10);
+}
+.cert-card:hover::after { transform: scaleX(1); }
+.cert-card .cert-icon {
+  width: 64px; height: 64px;
+  background: var(--gradient-secondary);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 24px rgba(249,115,22,0.30);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  flex-shrink: 0;
+}
+.cert-card:hover .cert-icon {
+  transform: scale(1.12) rotate(-5deg);
+  box-shadow: 0 12px 32px rgba(249,115,22,0.45);
+}
+.cert-card h5 {
+  font-size: 1rem;
+  font-weight: 800;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.cert-card p {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin: 0;
+}
+
 .feature-item {
   display: flex;
   gap: 22px;
@@ -1586,6 +1671,8 @@ section { padding: var(--section-py) 0; }
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
   box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
 }
 .blog-card:hover {
   transform: translateY(-8px);
@@ -1600,7 +1687,7 @@ section { padding: var(--section-py) 0; }
 }
 .blog-card:hover .blog-card-img img { transform: scale(1.10); }
 
-.blog-card-body { padding: 28px; }
+.blog-card-body { padding: 28px; display: flex; flex-direction: column; flex: 1; }
 .blog-category {
   display: inline-block;
   background: rgba(249,115,22,0.10);
@@ -1633,6 +1720,30 @@ section { padding: var(--section-py) 0; }
   border-top: 1px solid var(--border-light);
 }
 .blog-card-meta i { color: var(--secondary); }
+
+.blog-read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--secondary);
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 14px;
+  text-decoration: none;
+  transition: var(--transition);
+}
+.blog-read-more:hover {
+  color: var(--secondary-dark);
+}
+.blog-read-more i {
+  font-size: 0.85rem;
+  transition: transform 0.3s ease;
+}
+.blog-read-more:hover i {
+  transform: translateX(4px);
+}
 
 /* ================================================================
    FORM STYLES — PREMIUM
@@ -1760,15 +1871,32 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
   height: 420px;
   box-shadow: var(--shadow-lg);
 }
-.before-after-container img {
+/* Only the "after" image is full-width absolutely positioned */
+.ba-after {
+  position: absolute;
+  top: 0; left: 0;
   width: 100%; height: 100%;
   object-fit: cover;
-  position: absolute;
-  top: 0;
+  z-index: 1;
 }
-.ba-after { z-index: 1; }
-.ba-before { z-index: 2; width: 50%; overflow: hidden; }
-.ba-before img { width: 200%; }
+/* The "before" panel is absolutely positioned and clipped */
+.ba-before {
+  position: absolute;
+  top: 0; left: 0;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 2;
+}
+/* The before image MUST be position:relative so overflow:hidden clips it */
+.ba-before img {
+  position: relative !important;
+  width: 200%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  max-width: none;
+}
 .ba-divider {
   position: absolute;
   top: 0; bottom: 0;
@@ -1806,9 +1934,10 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
   letter-spacing: 1.5px;
   text-transform: uppercase;
   border-radius: var(--radius-full);
+  z-index: 5;
 }
-.ba-before-label { left: 18px; z-index: 3; }
-.ba-after-label { right: 18px; z-index: 0; }
+.ba-before-label { left: 18px; z-index: 12; }
+.ba-after-label { right: 18px; z-index: 5; }
 
 /* ================================================================
    CONTACT CARDS
@@ -2553,11 +2682,30 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
 @media (max-width: 1199px) {
   :root { --section-py: 90px; }
   .masonry-grid { columns: 2; }
+  /* Ensure service/blog rows stretch cards to equal heights */
+  .row.g-4, .row.g-3 {
+    align-items: stretch;
+  }
+  /* Slightly reduce card image height at tablet to prevent misalignment */
+  .service-card-img { height: 200px; }
+  .blog-card-img { height: 200px; }
+}
+
+/* ================================================================
+   1024PX TABLET SPECIFIC FIXES
+   ================================================================ */
+@media (min-width: 992px) and (max-width: 1100px) {
+  .service-card-img { height: 185px; }
+  .service-card-body { padding: 22px; }
+  .service-card-title { font-size: 1rem; }
+  .blog-card-img { height: 185px; }
+  .blog-card-body { padding: 22px; }
+  .blog-card-title { font-size: 0.97rem; }
 }
 
 @media (max-width: 991px) {
   :root { --section-py: 70px; }
-  .hero-section { min-height: auto; padding: 130px 0 80px; }
+  .hero-section { min-height: auto; padding: 130px 0 80px; overflow: hidden; }
   .hero-bg-image { background-attachment: scroll; }
   .hero-stat-item { padding: 0 20px 0 0; margin-right: 20px; }
   .process-step::after { display: none; }
@@ -2569,10 +2717,14 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
     margin-top: 12px;
     box-shadow: var(--shadow-lg);
     border: 1px solid var(--border-color);
+    max-width: 100%;
+    width: 100%;
   }
   .navbar-collapse .nav-link { color: var(--text-primary) !important; }
   .navbar-collapse .nav-link::after { bottom: 0; }
   .testimonials-track .testimonial-slide { flex: 0 0 calc(50% - 12px); }
+  /* Prevent particles from causing overflow on tablets */
+  .hero-particle-1, .hero-particle-2, .hero-particle-3 { display: none; }
 }
 
 @media (max-width: 767px) {
@@ -2584,17 +2736,24 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
   .auth-card { padding: 36px 28px; }
   .testimonials-track .testimonial-slide { flex: 0 0 100%; }
   .before-after-container { height: 280px; }
+  /* Contain the marquee from overflowing */
+  .marquee-track { max-width: 100%; }
+  /* Ensure section containers don't bleed */
+  section, .bg-section { max-width: 100%; overflow: hidden; }
 }
 
 @media (max-width: 575px) {
   .hero-title { font-size: 2.2rem; }
-  .btn-primary-custom, .btn-dark-custom { padding: 13px 26px; font-size: 0.88rem; }
+  .btn-primary-custom, .btn-dark-custom { padding: 13px 26px; font-size: 0.88rem; white-space: normal !important; text-align: center; }
   .back-to-top { bottom: 22px; right: 22px; }
   .filter-tabs { gap: 7px; }
   .filter-btn { padding: 8px 17px; font-size: 0.80rem; }
   .masonry-grid { columns: 1; }
   .gallery-grid { grid-template-columns: 1fr; }
   .hero-trust-row { gap: 14px; }
+  /* Fix any remaining overflows on small screens */
+  .container, .container-fluid { max-width: 100%; padding-left: 16px; padding-right: 16px; }
+  .row { margin-left: 0; margin-right: 0; }
 }
 
 /* ================================================================
@@ -2640,4 +2799,41 @@ section:not([class]) {
   background-image:
     radial-gradient(circle at 20% 80%, rgba(249,115,22,0.03) 0%, transparent 50%),
     radial-gradient(circle at 80% 20%, rgba(27,58,107,0.05) 0%, transparent 50%);
+}
+
+/* ================================================================
+   GLOBAL MOBILE OVERFLOW SAFETY NET
+   ================================================================ */
+/* Ensures no element can cause horizontal scrolling on mobile */
+@media (max-width: 991px) {
+  html, body {
+    overflow-x: hidden !important;
+    max-width: 100vw !important;
+  }
+  /* Hero section and all sections must be clipped */
+  .hero-section,
+  .cta-section,
+  .counter-section,
+  .site-footer,
+  section {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+  /* Prevent the scroll progress bar from causing overflow */
+  #scroll-progress {
+    max-width: 100vw;
+  }
+  /* Ensure the navbar does not push content */
+  .site-header {
+    max-width: 100vw;
+  }
+  /* Testimonial track must not overflow */
+  .testimonials-track-wrap {
+    overflow: hidden;
+    max-width: 100%;
+  }
+  /* Marquee container must clip */
+  .marquee-track {
+    overflow: hidden;
+  }
 }
