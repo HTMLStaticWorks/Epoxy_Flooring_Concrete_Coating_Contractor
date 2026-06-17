@@ -88,18 +88,18 @@
     </div>
   </div>
 
-  <!-- Contact Form + Map -->
-  <div class="row g-5 align-items-start">
-    <!-- Form -->
-    <div class="col-lg-6" data-aos="fade-right">
-      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:44px;box-shadow:var(--shadow-md);">
+
+  <!-- Contact Form - Full Width -->
+  <div class="row mb-5 justify-content-center">
+    <div class="col-12 col-xl-10" data-aos="fade-up">
+      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-2xl);padding:28px 32px;box-shadow:var(--shadow-md);">
         <div class="section-badge mb-3"><i class="fas fa-paper-plane"></i> Quick Quote</div>
         <h2 class="section-title" style="font-size:1.8rem;">Get Your Free <span>Estimate</span></h2>
         <div class="divider-orange"></div>
         <p style="color:var(--text-secondary);font-size:0.87rem;margin-bottom:28px;">Fill out the form below and one of our experts will contact you within 24 hours to discuss your project.</p>
         <form aria-label="Contact form" data-validate="" id="contactForm">
           <div class="row g-3">
-            <div class="col-sm-6">
+            <div class="col-md-6">
               <div class="form-group-custom">
                 <label class="form-label-custom" for="contactName">Full Name *</label>
                 <div class="form-input-icon">
@@ -109,7 +109,7 @@
                 <span class="form-error-msg">Name is required.</span>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-6">
               <div class="form-group-custom">
                 <label class="form-label-custom" for="contactPhone">Phone Number *</label>
                 <div class="form-input-icon">
@@ -119,7 +119,7 @@
                 <span class="form-error-msg">Phone number is required.</span>
               </div>
             </div>
-            <div class="col-12">
+            <div class="col-md-6">
               <div class="form-group-custom">
                 <label class="form-label-custom" for="contactEmail">Email Address *</label>
                 <div class="form-input-icon">
@@ -129,7 +129,7 @@
                 <span class="form-error-msg">Valid email is required.</span>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-6">
               <div class="form-group-custom">
                 <label class="form-label-custom" for="contactService">Service Needed *</label>
                 <select class="form-control-custom" id="contactService" name="service" required="">
@@ -146,7 +146,7 @@
                 <span class="form-error-msg">Please select a service.</span>
               </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-md-6">
               <div class="form-group-custom">
                 <label class="form-label-custom" for="contactSqft">Estimated Sq Footage</label>
                 <div class="form-input-icon">
@@ -155,7 +155,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-12">
+            <div class="col-md-6">
               <div class="form-group-custom">
                 <label class="form-label-custom" for="contactMessage">Project Details *</label>
                 <textarea class="form-control-custom" id="contactMessage" name="message" placeholder="Tell us about your floor condition, timeline, and any specific requirements..." required="" rows="4"></textarea>
@@ -174,16 +174,21 @@
         </form>
       </div>
     </div>
+  </div>
 
-    <!-- Map + Service Areas -->
-    <div class="col-lg-6" data-aos="fade-left">
-      <!-- Map -->
-      <div class="map-embed mb-4">
-        <iframe allowfullscreen="" height="340" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.5!2d-95.3698!3d29.7604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20TX!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus" title="EpoxyPro location — Houston TX"></iframe>
+  <!-- Map - Full Width -->
+  <div class="row mb-5" data-aos="fade-up">
+    <div class="col-12">
+      <div class="map-embed">
+        <iframe allowfullscreen="" height="420" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3464.5!2d-95.3698!3d29.7604!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20TX!5e0!3m2!1sen!2sus!4v1640000000000!5m2!1sen!2sus" title="EpoxyPro location — Houston TX" style="width:100%;border-radius:var(--radius-xl);"></iframe>
       </div>
+    </div>
+  </div>
 
-      <!-- Service Areas -->
-      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:30px;margin-bottom:20px;">
+  <!-- Service Areas + Trust Badges -->
+  <div class="row g-4 mb-4" data-aos="fade-up">
+    <div class="col-lg-8">
+      <div style="background:var(--bg-card);border:1px solid var(--border-color);border-radius:var(--radius-xl);padding:30px;">
         <h3 style="font-size:1.1rem;font-weight:700;margin-bottom:18px;color:var(--text-heading);">
           <i class="fas fa-map-marker-alt me-2" style="color:var(--secondary);"></i> Service Areas
         </h3>
@@ -202,17 +207,17 @@
           <span class="area-tag"><i class="fas fa-circle-dot"></i>Katy</span>
         </div>
       </div>
-
-      <!-- Trust badges -->
-      <div class="row g-3">
-        <div class="col-6">
-          <div class="contact-info-card" style="padding:20px;text-align:center;">
+    </div>
+    <div class="col-lg-4">
+      <div class="row g-3 h-100">
+        <div class="col-6 col-lg-12">
+          <div class="contact-info-card" style="padding:24px;text-align:center;">
             <div style="font-size:1.8rem;font-weight:900;color:var(--secondary);font-family:'Barlow Condensed',sans-serif;">24h</div>
             <div style="font-size:0.78rem;color:var(--text-secondary);font-weight:600;">Response Time</div>
           </div>
         </div>
-        <div class="col-6">
-          <div class="contact-info-card" style="padding:20px;text-align:center;">
+        <div class="col-6 col-lg-12">
+          <div class="contact-info-card" style="padding:24px;text-align:center;">
             <div style="font-size:1.8rem;font-weight:900;color:var(--secondary);font-family:'Barlow Condensed',sans-serif;">Free</div>
             <div style="font-size:0.78rem;color:var(--text-secondary);font-weight:600;">On-Site Quote</div>
           </div>
@@ -220,58 +225,14 @@
       </div>
     </div>
   </div>
+
 </div>
 </section>
 
-<!-- FAQ -->
-<section class="bg-section">
-<div class="container">
-  <div class="row gy-5">
-    <div class="col-lg-5" data-aos="fade-right">
-      <div class="section-badge"><i class="fas fa-question-circle"></i> FAQ</div>
-      <h2 class="section-title">Common <span>Questions</span></h2>
-      <div class="divider-orange"></div>
-      <p class="section-subtitle">Everything you need to know before booking your free consultation.</p>
-    </div>
-    <div class="col-lg-7" data-aos="fade-left">
-      <div class="faq-item open">
-        <div class="faq-question">How long does an epoxy floor installation take?<span class="faq-icon"><i class="fas fa-plus"></i></span></div>
-        <div class="faq-answer">Most residential garage floors are completed in 1–2 days, including surface preparation and coating application. Commercial and industrial projects vary based on square footage and complexity.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How long before I can walk on my new floor?<span class="faq-icon"><i class="fas fa-plus"></i></span></div>
-        <div class="faq-answer">Light foot traffic is typically safe within 12–24 hours. For vehicles and heavy equipment, we recommend waiting 72 hours. Polyaspartic coatings cure much faster — often within hours.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Do you offer a warranty on your work?<span class="faq-icon"><i class="fas fa-plus"></i></span></div>
-        <div class="faq-answer">Yes! All our epoxy floor installations come with a comprehensive 5-year workmanship warranty. We also provide guidance on proper care to maximize your floor's lifespan.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">How much does epoxy flooring cost?<span class="faq-icon"><i class="fas fa-plus"></i></span></div>
-        <div class="faq-answer">Pricing varies based on the size of the area, surface condition, coating system, and decorative options chosen. Typical residential garage floors range from $3–$7 per sq ft. Contact us for a free, accurate quote.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-question">Can epoxy be installed over existing coatings?<span class="faq-icon"><i class="fas fa-plus"></i></span></div>
-        <div class="faq-answer">In most cases, no. Existing coatings are removed via diamond grinding to ensure proper adhesion. This prep work is critical to the longevity of your new floor system.</div>
-      </div>
-    </div>
-  </div>
-</div>
-</section>
 
-<!-- CTA -->
-<section class="cta-section">
-<div class="container">
-  <div class="text-center" data-aos="zoom-in">
-    <h2 class="cta-title">Ready to Start Your <span>Project?</span></h2>
-    <p class="cta-text mx-auto" style="max-width:540px;">Don't wait — get your free, no-obligation on-site assessment and quote. Our team is ready to help you create the floor of your dreams.</p>
-    <div class="d-flex gap-3 justify-content-center flex-wrap">
-      <a class="btn-primary-custom" href="booking.html"><i class="fas fa-calendar-check"></i> Book Free Consultation</a>
-      <a class="btn-outline-custom" href="tel:+18005551234"><i class="fas fa-phone"></i> (800) 555-1234</a>
-    </div>
-  </div>
-</div>
-</section>
+
+
+
 
 <!-- FOOTER -->
 <footer class="site-footer">
