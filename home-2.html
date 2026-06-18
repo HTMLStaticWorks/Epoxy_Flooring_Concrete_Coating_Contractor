@@ -114,12 +114,14 @@
 
     /* Grid Portfolio (Aligned Heights) */
     .portfolio-masonry {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
       gap: 16px;
     }
 
     .pm-item {
+      width: calc((100% - 32px) / 3);
       border-radius: var(--radius-lg);
       overflow: hidden;
       position: relative;
@@ -162,14 +164,14 @@
     }
 
     @media(max-width:991px) {
-      .portfolio-masonry {
-        grid-template-columns: repeat(2, 1fr);
+      .pm-item {
+        width: calc((100% - 16px) / 2);
       }
     }
 
     @media(max-width:575px) {
-      .portfolio-masonry {
-        grid-template-columns: 1fr;
+      .pm-item {
+        width: 100%;
       }
     }
 
@@ -509,7 +511,7 @@
         <p class="section-subtitle">Our flooring solutions are engineered for the specific demands of each industry.</p>
       </div>
       <div class="row g-4">
-        <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="0">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="0">
           <div class="industry-card">
             <img alt="Warehouses" loading="lazy"
               src="https://images.pexels.com/photos/5604045/pexels-photo-5604045.jpeg" />
@@ -518,7 +520,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="50">
           <div class="industry-card">
             <img alt="Auto Shops" loading="lazy"
               src="https://images.pexels.com/photos/9702321/pexels-photo-9702321.jpeg" />
@@ -527,7 +529,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="100">
           <div class="industry-card">
             <img alt="Retail" loading="lazy" src="https://images.pexels.com/photos/3726902/pexels-photo-3726902.png" />
             <div class="industry-card-overlay">
@@ -535,7 +537,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="150">
           <div class="industry-card">
             <img alt="Manufacturing" loading="lazy"
               src="https://images.pexels.com/photos/34718922/pexels-photo-34718922.jpeg" />
@@ -544,7 +546,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="200">
           <div class="industry-card">
             <img alt="Garages" loading="lazy"
               src="https://images.pexels.com/photos/32038719/pexels-photo-32038719.jpeg" />
@@ -553,7 +555,7 @@
             </div>
           </div>
         </div>
-        <div class="col-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-2" data-aos="zoom-in" data-aos-delay="250">
           <div class="industry-card">
             <img alt="Commercial" loading="lazy"
               src="https://images.pexels.com/photos/4981719/pexels-photo-4981719.jpeg" />

@@ -75,16 +75,15 @@
         </div>
 
         <!-- Remember Me & Forgot Password -->
-        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
-          <div style="display:flex;align-items:center;gap:10px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;flex-wrap:nowrap;gap:4px;">
+          <div style="display:flex;align-items:center;gap:6px;flex-shrink:1;">
             <input type="checkbox" id="remember-me"
-              style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;" />
+              style="width:15px;height:15px;accent-color:var(--primary);cursor:pointer;margin:0;flex-shrink:0;" />
             <label for="remember-me"
-              style="font-size:0.85rem;color:var(--text-secondary);cursor:pointer;user-select:none;margin:0;">Remember me</label>
+              style="font-size:clamp(0.7rem, 3.5vw, 0.85rem);color:var(--text-secondary);cursor:pointer;user-select:none;margin:0;white-space:nowrap;">Remember me</label>
           </div>
           <a href="#"
-            style="font-size:0.85rem;color:var(--secondary);font-weight:600;text-decoration:none;transition:color 0.2s;">Forgot
-            Password?</a>
+            style="font-size:clamp(0.7rem, 3.5vw, 0.85rem);color:var(--secondary);font-weight:600;text-decoration:none;transition:color 0.2s;white-space:nowrap;flex-shrink:0;">Forgot Password?</a>
         </div>
 
         <!-- Login Button -->

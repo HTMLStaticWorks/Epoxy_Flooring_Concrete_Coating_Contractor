@@ -1296,6 +1296,13 @@ section { padding: var(--section-py) 0; }
 .feature-content h5 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; color: var(--text-heading); }
 .feature-content p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; margin: 0; }
 
+@media (max-width: 575px) {
+  .feature-item {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
 /* ================================================================
    PROJECT CARDS / GALLERY
    ================================================================ */
@@ -2158,7 +2165,7 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
   align-items: center;
   gap: 16px;
   margin: 24px 0;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 0.78rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
