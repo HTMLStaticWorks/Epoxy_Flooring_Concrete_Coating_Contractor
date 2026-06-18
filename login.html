@@ -21,9 +21,9 @@
 <body>
 
   <!-- Floating Theme & RTL Controls (Top Right Corner, Outside Card) -->
-  <div class="auth-controls" style="position:fixed;top:24px;right:24px;z-index:1001;display:flex;gap:10px;">
-    <button class="header-icon-btn rtl-toggle" title="RTL Toggle" aria-label="Toggle RTL" style="color:#fff;">
-      <i class="fas fa-align-right"></i>
+  <div class="auth-controls">
+    <button aria-label="Toggle RTL" class="header-icon-btn rtl-toggle" title="Toggle RTL" style="color:#fff;">
+      <span class="rtl-label" style="font-size:0.7rem;font-weight:700;">RTL</span>
     </button>
     <button class="header-icon-btn theme-toggle" title="Theme Toggle" aria-label="Toggle Theme" style="color:#fff;">
       <i class="theme-icon fas fa-moon"></i>
@@ -62,12 +62,7 @@
 
         <!-- Password Field with Toggle -->
         <div class="form-group-custom">
-          <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px;">
-            <label class="form-label-custom" style="margin:0;" for="login-pwd">Password *</label>
-            <a href="#"
-              style="font-size:0.8rem;color:var(--secondary);font-weight:600;text-decoration:none;transition:color 0.2s;">Forgot
-              Password?</a>
-          </div>
+          <label class="form-label-custom" for="login-pwd">Password *</label>
           <div class="form-input-icon" style="position:relative;">
             <i class="fas fa-lock"></i>
             <input type="password" id="login-pwd" class="form-control-custom" placeholder="Your password" required />
@@ -79,13 +74,17 @@
           </div>
         </div>
 
-        <!-- Remember Me Checkbox -->
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:24px;">
-          <input type="checkbox" id="remember-me"
-            style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;" />
-          <label for="remember-me"
-            style="font-size:0.85rem;color:var(--text-secondary);cursor:pointer;user-select:none;">Remember me for 30
-            days</label>
+        <!-- Remember Me & Forgot Password -->
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <input type="checkbox" id="remember-me"
+              style="width:16px;height:16px;accent-color:var(--primary);cursor:pointer;" />
+            <label for="remember-me"
+              style="font-size:0.85rem;color:var(--text-secondary);cursor:pointer;user-select:none;margin:0;">Remember me</label>
+          </div>
+          <a href="#"
+            style="font-size:0.85rem;color:var(--secondary);font-weight:600;text-decoration:none;transition:color 0.2s;">Forgot
+            Password?</a>
         </div>
 
         <!-- Login Button -->

@@ -2037,15 +2037,35 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
 /* ================================================================
    AUTH PAGES
    ================================================================ */
+.auth-controls {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  z-index: 1001;
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 640px) {
+  .auth-controls {
+    top: 12px;
+    right: 12px;
+  }
+}
+
 .auth-page {
   min-height: 100vh;
   background: var(--gradient-dark);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 40px 20px;
+  padding: 80px 20px 40px;
   position: relative;
   overflow: hidden;
+}
+@media (min-width: 640px) {
+  .auth-page {
+    padding: 40px 20px;
+  }
 }
 .auth-page::before {
   content: '';
