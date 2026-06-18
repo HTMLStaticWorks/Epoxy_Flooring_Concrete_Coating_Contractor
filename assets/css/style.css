@@ -1023,6 +1023,26 @@ section { padding: var(--section-py) 0; }
 .breadcrumb-custom .sep { color: rgba(255,255,255,0.25); font-size: 0.75rem; }
 .breadcrumb-custom .current { color: var(--secondary); font-size: 0.88rem; font-weight: 600; }
 
+/* Ensure all layout cards/boxes stretch to equal heights within their grid rows */
+.row > [class*="col-"]:has(.feature-item),
+.row > [class*="col-"]:has(.cert-card),
+.row > [class*="col-"]:has(.service-card),
+.row > [class*="col-"]:has(.blog-card),
+.row > [class*="col-"]:has(.pricing-card),
+.row > [class*="col-"]:has(.industry-card) {
+  display: flex;
+  flex-direction: column;
+}
+.row > [class*="col-"]:has(.feature-item) > *,
+.row > [class*="col-"]:has(.cert-card) > *,
+.row > [class*="col-"]:has(.service-card) > *,
+.row > [class*="col-"]:has(.blog-card) > *,
+.row > [class*="col-"]:has(.pricing-card) > *,
+.row > [class*="col-"]:has(.industry-card) > * {
+  flex: 1 1 auto;
+  width: 100%;
+}
+
 /* ================================================================
    SERVICE CARDS — PREMIUM
    ================================================================ */
@@ -1237,6 +1257,8 @@ section { padding: var(--section-py) 0; }
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  height: 100%;
+  width: 100%;
 }
 .feature-item::before {
   content: '';
@@ -1413,7 +1435,8 @@ section { padding: var(--section-py) 0; }
   z-index: 1;
 }
 
-.testimonial-author { display: flex; align-items: center; gap: 16px; }
+.testimonial-author { display: flex; align-items: flex-start; gap: 16px; }
+.testimonial-author > div { margin-top: 4px; }
 
 .testimonial-avatar {
   width: 56px; height: 56px;
@@ -1495,6 +1518,21 @@ section { padding: var(--section-py) 0; }
 }
 .cta-title span { color: var(--secondary); }
 .cta-text { font-size: 1.05rem; color: rgba(255,255,255,0.72); line-height: 1.85; margin-bottom: 40px; }
+
+/* Ensure input text and placeholders are fully visible inside the dark CTA section */
+.cta-section .form-control-custom {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  color: #ffffff !important;
+}
+.cta-section .form-control-custom::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+.cta-section .form-control-custom:focus {
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-color: var(--secondary) !important;
+  box-shadow: 0 0 0 5px rgba(249, 115, 22, 0.2) !important;
+}
 
 /* ================================================================
    COUNTER SECTION
@@ -1712,12 +1750,14 @@ section { padding: var(--section-py) 0; }
 .blog-card-meta {
   display: flex;
   align-items: center;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 8px 16px;
   font-size: 0.78rem;
   color: var(--text-muted);
   margin-top: 18px;
   padding-top: 18px;
   border-top: 1px solid var(--border-light);
+  min-height: 62px;
 }
 .blog-card-meta i { color: var(--secondary); }
 
@@ -1730,7 +1770,8 @@ section { padding: var(--section-py) 0; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-top: 14px;
+  margin-top: auto;
+  padding-top: 14px;
   text-decoration: none;
   transition: var(--transition);
 }
@@ -1759,6 +1800,7 @@ section { padding: var(--section-py) 0; }
 }
 .form-control-custom {
   width: 100%;
+  display: block;
   padding: 15px 20px;
   background: var(--bg-secondary);
   border: 2px solid var(--border-color);
@@ -1780,7 +1822,7 @@ select.form-control-custom { cursor: pointer; }
 textarea.form-control-custom { resize: vertical; min-height: 130px; }
 .form-error-msg { font-size: 0.78rem; color: #EF4444; margin-top: 5px; display: none; }
 .form-error-msg.show { display: block; }
-.form-input-icon { position: relative; }
+.form-input-icon { position: relative; display: block; width: 100%; }
 .form-input-icon i {
   position: absolute;
   left: 18px; top: 50%;
@@ -2158,7 +2200,7 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
 }
 .auth-card .toggle-password {
   position: absolute;
-  right: 18px;
+  right: 16px !important;
   top: 50%;
   transform: translateY(-50%);
   background: none;
@@ -2177,6 +2219,11 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
 }
 [data-theme="dark"] .auth-card .toggle-password:hover {
   color: var(--secondary);
+}
+.auth-card .toggle-password i {
+  position: relative !important;
+  left: auto !important;
+  transform: none !important;
 }
 .auth-card input[type="password"], .auth-card input[type="text"]#login-pwd, .auth-card input[type="text"]#reg-pwd, .auth-card input[type="text"]#reg-confirm {
   padding-right: 44px;
@@ -2688,7 +2735,8 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
   }
   /* Slightly reduce card image height at tablet to prevent misalignment */
   .service-card-img { height: 200px; }
-  .blog-card-img { height: 200px; }
+  .blog-card-img { height: 180px !important; }
+  .col-lg-8 .blog-card-img { height: 260px !important; }
 }
 
 /* ================================================================
@@ -2698,9 +2746,38 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
   .service-card-img { height: 185px; }
   .service-card-body { padding: 22px; }
   .service-card-title { font-size: 1rem; }
-  .blog-card-img { height: 185px; }
-  .blog-card-body { padding: 22px; }
-  .blog-card-title { font-size: 0.97rem; }
+  .blog-card-img { height: 140px !important; }
+  .col-lg-8 .blog-card-img { height: 230px !important; }
+  .blog-card-body { padding: 18px !important; }
+  .blog-card-title { font-size: 0.92rem !important; }
+  .col-lg-8 .blog-card-title { font-size: 1.25rem !important; }
+
+  /* Navbar adjustments to prevent wrapping/overflow at 1024px */
+  .site-header .nav-link {
+    padding: 6px 10px !important;
+    font-size: 0.82rem;
+  }
+  .site-header .navbar-nav {
+    gap: 4px !important;
+  }
+  .site-header .header-quote-btn {
+    padding: 8px 16px !important;
+    font-size: 0.78rem !important;
+  }
+  .site-header .brand-name {
+    font-size: 1.05rem;
+  }
+  .site-header .brand-logo {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+  .site-header .navbar-brand {
+    gap: 8px;
+  }
+  .site-header .header-actions {
+    gap: 6px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -2725,6 +2802,7 @@ textarea.form-control-custom { resize: vertical; min-height: 130px; }
   .testimonials-track .testimonial-slide { flex: 0 0 calc(50% - 12px); }
   /* Prevent particles from causing overflow on tablets */
   .hero-particle-1, .hero-particle-2, .hero-particle-3 { display: none; }
+  .blog-card-img { height: 220px !important; }
 }
 
 @media (max-width: 767px) {
