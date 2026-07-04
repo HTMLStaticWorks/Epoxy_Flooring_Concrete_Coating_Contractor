@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a1628" />
+      <stop offset="100%" stop-color="#1b3a6b" />
+    </linearGradient>
+    <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f97316" />
+      <stop offset="100%" stop-color="#fbbf24" />
+    </linearGradient>
+  </defs>
+  <!-- Rounded container background -->
+  <rect width="512" height="512" rx="120" fill="url(#bg-grad)" />
+  
+  <!-- Layer Group Icon (Font Awesome fa-layer-group representation) -->
+  <g transform="translate(96, 96) scale(0.625)" fill="url(#logo-grad)">
+    <!-- Top Layer -->
+    <path d="M256 0L16 120L256 240L496 120L256 0Z" />
+    <!-- Middle Layer -->
+    <path d="M496 210L466 195L256 300L46 195L16 210L256 330L496 210Z" opacity="0.85" />
+    <!-- Bottom Layer -->
+    <path d="M496 300L466 285L256 390L46 285L16 300L256 420L496 300Z" opacity="0.7" />
+  </g>
+</svg>

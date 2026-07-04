@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coming Soon | EpoxyPro Contractors</title>
+  <meta name="description" content="Something exciting is coming soon to EpoxyPro Contractors. Sign up to be the first to know." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+</head>
+<body>
+
+<!-- Theme toggle -->
+<div style="position:fixed;top:20px;right:20px;z-index:1001;display:flex;gap:8px;">
+  <button class="header-icon-btn theme-toggle" style="background:rgba(27,58,107,0.7);border-color:rgba(255,255,255,0.2);color:#fff;" title="Theme"><i class="theme-icon fas fa-moon"></i></button>
+</div>
+
+<div class="coming-soon-page">
+  <!-- Decorative -->
+  <div style="position:absolute;top:-20%;right:-10%;width:600px;height:600px;border-radius:50%;background:radial-gradient(circle,rgba(249,115,22,0.07),transparent 65%);pointer-events:none;"></div>
+  <div style="position:absolute;bottom:-20%;left:-10%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(42,82,152,0.15),transparent 65%);pointer-events:none;"></div>
+
+  <!-- Rings decoration -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:600px;height:600px;border-radius:50%;border:1px solid rgba(255,255,255,0.04);pointer-events:none;"></div>
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:800px;height:800px;border-radius:50%;border:1px solid rgba(255,255,255,0.025);pointer-events:none;"></div>
+
+  <div class="position-relative" style="z-index:1;max-width:700px;padding:40px 20px;width:100%;">
+    <!-- Logo -->
+    <div class="d-flex align-items-center gap-3 justify-content-center mb-5">
+      <div style="width:52px;height:52px;background:var(--gradient-secondary);border-radius:14px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.4rem;box-shadow:var(--shadow-secondary);">
+        <i class="fas fa-layer-group"></i>
+      </div>
+      <div style="text-align:left;">
+        <div style="font-size:1.3rem;font-weight:800;color:#fff;">EpoxyPro</div>
+        <div style="font-size:0.65rem;color:rgba(255,255,255,0.5);letter-spacing:1.5px;text-transform:uppercase;">Contractors</div>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="section-badge mx-auto mb-4" style="background:rgba(249,115,22,0.12);border-color:rgba(249,115,22,0.3);color:#FED7AA;">
+      <i class="fas fa-rocket"></i> Something Big is Coming
+    </div>
+
+    <h1 style="font-size:clamp(2.2rem,6vw,4rem);font-weight:900;color:#fff;line-height:1.1;margin-bottom:20px;">
+      We're Upgrading<br>Our <span style="background:linear-gradient(135deg,var(--secondary),#FBBF24);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Floor Game</span>
+    </h1>
+    <p style="color:rgba(255,255,255,0.65);font-size:1.05rem;line-height:1.8;margin-bottom:48px;max-width:520px;margin-left:auto;margin-right:auto;">
+      We're working hard on something amazing — a completely new online experience for getting your epoxy flooring quotes, scheduling, and project tracking. Stay tuned!
+    </p>
+
+    <!-- Countdown -->
+    <div class="countdown-timer d-flex justify-content-center gap-3 flex-wrap mb-5">
+      <div class="countdown-item">
+        <span class="countdown-number cd-days">30</span>
+        <div class="countdown-label">Days</div>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number cd-hours">00</span>
+        <div class="countdown-label">Hours</div>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number cd-mins">00</span>
+        <div class="countdown-label">Minutes</div>
+      </div>
+      <div class="countdown-item">
+        <span class="countdown-number cd-secs">00</span>
+        <div class="countdown-label">Seconds</div>
+      </div>
+    </div>
+
+    <!-- Newsletter Signup -->
+    <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);border-radius:20px;padding:32px;margin-bottom:36px;">
+      <h3 style="color:#fff;font-size:1.1rem;font-weight:700;margin-bottom:8px;">Get Notified When We Launch</h3>
+      <p style="color:rgba(255,255,255,0.55);font-size:0.85rem;margin-bottom:20px;">Be the first to access exclusive launch offers.</p>
+      <form data-validate id="csForm" style="display:flex;gap:10px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:220px;">
+          <input type="email" class="form-control-custom" id="cs-email" placeholder="Enter your email address" required style="background:rgba(255,255,255,0.08);border-color:rgba(255,255,255,0.15);color:#fff;" />
+          <div class="form-error-msg">Valid email required.</div>
+        </div>
+        <button type="submit" class="btn-primary-custom" style="white-space:nowrap;">
+          <i class="fas fa-bell"></i> Notify Me
+        </button>
+      </form>
+    </div>
+
+    <!-- Social Links -->
+    <div class="d-flex justify-content-center gap-3 mb-4">
+      <a href="#" class="social-link" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" class="social-link" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="#" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="social-link" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <!-- Back to site -->
+    <div style="margin-top:16px;">
+      <a href="index.html" style="color:rgba(255,255,255,0.4);font-size:0.82rem;display:inline-flex;align-items:center;gap:6px;transition:color 0.2s;" onmouseenter="this.style.color='var(--secondary)'" onmouseleave="this.style.color='rgba(255,255,255,0.4)'">
+        <i class="fas fa-arrow-left"></i> Back to Current Site
+      </a>
+    </div>
+
+    <!-- Contact -->
+    <div style="margin-top:32px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap;">
+      <a href="tel:+18005551234" style="color:rgba(255,255,255,0.5);font-size:0.82rem;display:inline-flex;align-items:center;gap:6px;" onmouseenter="this.style.color='var(--secondary)'" onmouseleave="this.style.color='rgba(255,255,255,0.5)'">
+        <i class="fas fa-phone"></i> (800) 555-1234
+      </a>
+      <a href="mailto:info@epoxypro.com" style="color:rgba(255,255,255,0.5);font-size:0.82rem;display:inline-flex;align-items:center;gap:6px;" onmouseenter="this.style.color='var(--secondary)'" onmouseleave="this.style.color='rgba(255,255,255,0.5)'">
+        <i class="fas fa-envelope"></i> info@epoxypro.com
+      </a>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
+
+
